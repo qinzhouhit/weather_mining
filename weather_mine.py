@@ -5,15 +5,16 @@ import collections
 
 
 def weather_mine():
-    '''
+    """
     city names and related ID can be obtained by visiting:
     http://tianqi.2345.com/wea_history/54511.htm
     By clicking different city names, you can find the ID in the URL.
     :return: a csv with header
-    '''
+    
     # city2code = {'nj': '58238','wx': '58354','cs': '57687','sz': '59493',
     #              'bj':'54511','wh':'57494','cd':'56294','sh':'58362'
     #             }
+    """
     city2code = {'nj': '58238','wx': '58354','cs': '57687','sz': '59493'}
     for city in city2code:
         for year in [2017]: # target year
@@ -46,5 +47,6 @@ def weather_mine():
                 for data in all_data:
                     writer.writerow([data[col] for col in cols])
 
+                    
 if __name__ == "__main__":
     weather_mine()
